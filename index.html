@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Message</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            border-right: 2px solid rgba(255, 255, 255, 0.7);
+            padding-right: 12px;
+            overflow: hidden;
+            max-width: 90vw;
+            animation: blink 1s step-end infinite, fadeIn 1.5s ease-in-out;
+            display: none;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #clickToStart {
+            font-size: 1.2rem;
+            color: #888;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="typingText"></h1>
+    <p id="clickToStart">Focus... every syllable matters</p>
+
+    <audio id="bgMusic" loop>
+        <source src="27th.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const words = [
+            "To whom ever thinks this is a game...",
+            "And patiently waiting for their name to appear",
+            "Think wisely ...",
+            "Our paths will cross once more...",
+            "And the truth will be unfolded",
+            "27th..."
+        ];
+        const typingSpeed = 100;
+        const pauseBetweenWords = 4000;
+
+        const typingElement = document.getElementById('typingText');
+        const bgMusic = document.getElementById('bgMusic');
+        const clickMessage = document.getElementById('clickToStart');
+
+        let wordIndex = 0;
+        let started = false;
+
+        function typeWord(word, callback) {
+            let charIndex = 0;
+            typingElement.textContent = '';
+            function typeChar() {
+                if (charIndex < word.length) {
+                    typingElement.textContent += word.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeChar, typingSpeed);
+                } else {
+                    callback();
+                }
+            }
+            typeChar();
+        }
+
+        function startTypingLoop() {
+            typeWord(words[wordIndex], () => {
+                setTimeout(() => {
+                    wordIndex = (wordIndex + 1) % words.length;
+                    startTypingLoop();
+                }, pauseBetweenWords);
+            });
+        }
+
+        document.body.addEventListener('click', () => {
+            if (!started) {
+                started = true;
+                clickMessage.style.display = 'none';
+                typingElement.style.display = 'block';
+                bgMusic.play().catch(e => console.warn("Autoplay blocked:", e));
+                startTypingLoop();
+            }
+        });
+    </script>
+</body>
+</html>
