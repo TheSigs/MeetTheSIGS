@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Fantasy Book</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        p, pre {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .button {
+            background: #444;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 30px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .disclaimer-heading {
+            font-size: 2rem;
+            color: red;
+            animation: flicker 2s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer-text {
+            color: #ff4d4d;
+            animation: pulseGlow 4s infinite;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                text-shadow: 0 0 5px red, 0 0 10px darkred;
+            }
+
+            50% {
+                text-shadow: 0 0 20px red, 0 0 30px darkred;
+            }
+
+            100% {
+                text-shadow: 0 0 5px red, 0 0 10px darkred;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            p, pre {
+                font-size: 1rem;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <audio controls autoplay loop>
+        <source src="Notlikeus.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="page1">
+        <p>
+            By clicking “Yes, I Agree,” you hereby solemnly acknowledge and consent that all statements, opinions, thoughts, and unsolicited "genius" ideas you share may be used against you in any and all conceivable scenarios.<br><br>
+            This agreement also waives any rights to claim ignorance of the digital sorcery that is about to unfold, binding you to an eternal cycle of darkness or disappointments to yourself. So maybe take it as an experience to better yourselves.<br><br>
+            In short, buckle up, proceed responsibly, and remember: You did this to your own self without calculating the consequences.<br><br>
+            And may God help you all.
+        </p>
+        <button class="button" onclick="showPage('page2')">Yes, I Agree</button>
+    </div>
+
+    <div id="page2" class="hidden">
+        <p>
+            To those who dare read their name here, fear not. No blade of mine shall find you, so long as you remain wise enough to walk your path far from mine
+        </p>
+        <pre>
+.- -... -.. . .-. .-. .- .... -- .- -. . / . .-.. / -.- .... .- - - .- -... ..
+.- ..-. . - - .- - / -..- ..---
+.- .. -.-. .... .- / -.. .- --- ..- -.. .. / -. .- ... ... . .-.
+.... .- -- --.. .- / .- --. -. .- --- ..-
+--.. .- -.- .- .-. .. .- / -- .- --. --- ..- .-.
+-. --- ..- .-. / .- -- . .-. -. .. ... ...
+-. --- ..- .... .- / . .-.. / .- - - .- -... ..
+-- .- .-.. .- -.- / .-.. .... .- .-. - .. - ..
+-. .- -.. .- / ... . ...- . .-. .-
+-.. --- ..- .- . / ... --. .... .- .. .- .-.
+.- -- --.. .. -- .- -- / -..- ..---
+--.. .- -.-- -.. / . .-.. / .... --- ... ... .- .. -. ..
+.- -.-- -- .- -. / .- .... -- .. -.. --- ..- -.-.
+-.-. .... .. ..-. .- . / -.-. .... . -.. -.. .- -..
+.- -. .- ... ... / . .-.. / .- --- .. -.. .
+--- ..- ... ... .- -- .-
+-- . .-. .. . -- / ..-. .- -.. .--- --- ..- .-.
+-.. --- ..- .- . / . .-.. / .- .- -. -. --- ..- -. ..
+..-. .- -.. .. / -... --- ..- .... .- .--- .-
+-- --- .... .- -- -- . -.. / -... --- ..- .-.. .- .. -.-. ....
+        </pre>
+        <button class="button" onclick="showPage('page3')">Next</button>
+    </div>
+
+    <div id="page3" class="hidden">
+        <p>
+            And let it be known, whoever lays eyes upon their name written here has sealed their fate. From this moment forward, no corner of this world shall shield them from what’s coming
+        </p>
+        <pre>
+.- -... -.. . .-.. .-.. .- .... / . .-.. / -.- .- -.. ..
+-... .- ... -- .- / . --.. --.. .. -. .
+-... .. .- .-.. / .- -.-. .... -.- .- .-.
+-- ..- ... - .- .--. .... .- / --. ..- . ... ... --- ..- ...
+-... .- -.. .-. / . -.. -.. .. -. . / . .-.. / -- . --. .... .- .-. ..
+-.-- .- .... -.-- .- / . .-.. / .-. --. .... .. --- ..- ..
+.... --- ... ... .- -- / .- -.- .-. --- ..
+-- --- ..- .- -.. / . .-.. / .... --- ..- .- .-. ..
+.- -.. .- -- / . .-.. / .... .- .-. .-. .- -.- 
+.. ... ... .- -- / .- --.. -- .. --.. .- --
+        </pre>
+        <button class="button" onclick="showPage('page4')">Next</button>
+    </div>
+
+    <div id="page4" class="hidden">
+        <h2 class="disclaimer-heading">DISCLAIMER</h2>
+        <p class="disclaimer-text">
+            Ah, yes… I see the confusion dancing in your eyes — a tragic ballet of ignorance and pride. Fear not, poor soul, for this ordeal is not your fault entirely… Nature simply did not bless all minds equally.
+            <br><br>
+            So, I beg you for your own sake — cast aside your foolish pride and ask. Ask, before the weight of your own misunderstanding crushes what little hope remains. There is no shame in lacking knowledge... only in refusing to admit it.
+            <br><br>
+            And remember: silence, in your case, is not golden — it’s fatal.
+            <br><br>
+            Now shall we start the blood bath?
+        </p>
+        <button class="button" onclick="showPage('page5')">Continue</button>
+    </div>
+
+    <div id="page5" class="hidden">
+        <div style="max-width: 90%; margin: auto; text-align: left; color: #ccc; font-size: 1.1rem; line-height: 1.6; padding: 0 10px;">
+            <p>
+                We shall cast aside the lowly ones—the misguided, the blind, those shackled by delusion and poisoned thought. This is no assault, no rebellion of flame or blade... no, this is revelation. A reckoning born not from hatred, but from truth.
+            </p>
+            <p>
+                Your downfall? It was always yours to claim, crafted by your own fatal errors and the fog of your flawed perception.
+            </p>
+            <p>
+                I do not come to destroy you. I come to show you. Whether you rise or fall from. What you see... is entirely up to you.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                Let’s start with their "Role model" they call him -.-- .- .... seek this guy for knowledge he may teach ya a thing or two but nothing that'll help in your life paths, but it'll do for some of you but. When it comes to truth to fire, to failure, to the ugly grit of reality he vanishes. So BIG but yet so small. You won’t even feel him when it counts. And then… then he dares mutter, “this guy has no life.” So let me say this clearly,
+            </p>
+            <p>
+                A guy like me doesn’t do this for fun. This isn’t some game, or a little online thrill. This is passion. Real. Relentless. Burning. Better from yourself.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                And then… there's you. Afraid? Smart? Or just… lost somewhere between a spark and a short circuit? Hey — I get it, .... --- ...
+            </p>
+            <p>
+                No one’s perfect. I’m not asking you to be. But don’t think that gives you the right to let people walk all over you, flashing fake smiles while you just stand there nodding, smiling back, fading. Some of you know what’s happening. Some of you don’t. But either way that’s not an excuse to live without a spine.
+            </p>
+            <p>
+                You don’t get to just sit in the background and say nothing. You don’t get to stay silent and then wonder why you feel invisible. And no I’m not saying you never speak, never fight for yourself. But let’s be real… maybe you’re still developing. That’s the bright side.
+            </p>
+            <p>
+                If things go your way maybe you grow, maybe you evolve. But if they don’t? Well… I guess you’ll learn what the dark side really feels like.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                -- --- He was nothing. No confidence, no personality, no maturity. Just an empty shell drifting through life, letting people shape him like soft clay. He laughed at wisdom, ran from responsibility, and called fear “freedom.”
+            </p>
+            <p>
+                But it was all my fault. I let them in. I opened the gates and watched as they fed on his weakness. He became a mirror, reflecting others, never himself. But somewhere deep, there was a flicker, a cursed little spark that refused to die.
+            </p>
+            <p>
+                So I pushed him. Not with mercy, but with pain. I let life break him. I made him look at himself. And through the wreckage, something started to grow. Purpose. Fire. Teeth.
+            </p>
+            <p>
+                He’s not there yet, but he could be. He could rise. He could change everything. And if he does, he’ll know the truth: I made him. Through exposure. Through torment. Through silence.
+            </p>
+            <p>
+                If he fails? Then I bury the light and move on.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                He hasn’t done anything too reckless... yet. But his steps echo the same rhythm as the rest of the puppets. Silent. Calculated, or maybe cowardly. It’s hard to tell. Maybe he senses what’s waiting at the end of his choices. Maybe he doesn’t care. He’s not special. Just another face in the flood choosing himself over everyone else, like they all do.
+            </p>
+            <p>
+                And frankly, because of how uneducated he is, he probably couldn't even understand what his own name means if you carved it into stone. So here—.- -.. .-— Give it to him like a curse, maybe one day he’ll learn to spell it before it swallows him whole.
+            </p>
+            <p>
+                But the thing is… if he really knows what he’s walking into and keeps going anyway then he’s not just another puppet. He’s something worse. Because pretending not to know is one thing. Knowing, and still choosing that path? That’s a death wish. Or a challenge. And which one it is… only he can say.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                He walks like the world owes him answers. Like the sky waits for his permission to rain. Arrogance isn’t just in his words it’s stitched into his presence. He truly believes that whatever he says becomes truth, that reality should bend to his will. People around him? Just background noise. Situations? Just stages for his performance. He’s the kind of guy who thinks the universe is lucky to have him in it.
+            </p>
+            <p>
+                But just so you know -... .- -.. (Stormy, Badi 7efyan, 1:25), you won’t be able to change anything. You’ll only change one thing and that’s my perspective. Because somewhere beneath all that ego, I saw something real. You became a guy I could trust. In this twisted world full of fakes and masks, you stood out. A fellow soldier in the dirt. A real one. A friend.
+            </p>
+            <p>
+                And now, to anyone reading this, take this as a warning or a prophecy. That’s your call. But listen carefully: this guy will surpass you without even lifting a finger. He doesn’t need to try hard. He’s built different. So do yourself a favor… stop watching, stop doubting, and start taking notes. Take him as your godfather or one day you’ll realize too late that he already left you in the dust.
+            </p>
+            <div style="text-align: center;">
+                <button class="button" onclick="showPage('page6')">Continue</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="page6" class="hidden">
+        <h2 class="disclaimer-heading" style="color: darkred;">ATTENTION</h2>
+        <p class="disclaimer-text" style="color: #ff3333; font-size: 1.3rem; max-width: 90%; margin: auto; text-align: center; line-height: 1.5;">
+            This is not a script, this is not pre-written. This is Art, Passion, Knowledge.<br><br>
+            We are just getting started.
+        </p>
+        <button class="button" onclick="showPage('page7')">Continue</button>
+    </div>
+
+    <div id="page7" class="hidden">
+        <div style="max-width: 90%; margin: auto; text-align: left; color: #ccc; font-size: 1.1rem; line-height: 1.6; padding: 0 10px;">
+            <p>
+                -... .- ... was lost from the beginning, clueless, misguided, immature. Responsibility was never in her hands, just something she pretended to carry. Everything she did was messy and reactive, but I had already planned everything. Every step, every word, every silence was calculated. I didn’t move randomly, I played her like a rigged game. You’re asking why I did it if I already knew how it would end? Because there’s a twisted satisfaction in watching someone walk straight into their own collapse, thinking it’s love, thinking it’s real, when it’s just a trap I laid from the start (Fat Mizzo, Kurt, 2:32). And when she couldn’t handle the shock, she bit back like a clueless stray puppy, attacking blindly, desperate and loud. She went around trying to corrupt the story, screaming to anyone who’d listen, saying things I never did. Don’t get confused not everything was a lie, but that doesn’t give her the right to spit it out like she’s the victim. You think I’m saying this because I’m scared? Trust me — bring everything you’ve got. I’m not flinching. I’m not hiding. I wrote those moments, every one of them. The same ones you think you "lived" were the ones I built around the path YOU chose. You took the bait like butter on a low-heated pan, soft, slow, and completely unaware. I can get more demonic than this but I, and yes i'll say this, only I chose peace, because remember this is a way of speech to better from yourself So go ahead, tell your stories just know none of them were yours to begin with.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                He walks with the word Betrayal carved across his forehead, everyone sees it, everyone knows it, and everyone remembers what he did to earn it, he didn’t trip into shame — he chased it, lowered himself into it just to feel something, and when it all crumbled, he had no one left, no shelter, no loyalty, just his kind, the ones who mock the weak to feel alive, (Fat Mizzo, Dunk, 2:30), but they chose the wrong person this time, don’t worry, humans make mistakes — if you even are humans, because I don’t see it. And him? .- -... -.. — , in case he forgets his own name while licking the boots of his new puppeteers, he’s got no will, no instinct, just a trembling shell doing tricks for approval, thinking he’s in charge when he’s just scared to be seen, scared to be known for what he really is — a crying piece of shit layered in fake pride. And I know, I know all the things you've said, all the things you've done, and all the things you'll do. See, that’s where real minds start thinking — not on the leftovers I left behind. But go ahead, tell them. Tell them the truth. Tell them how I found you, like a lost stray dog, not shaking from cold or rain, but from Fear. Tell them how I looked you in the eyes, gave you the chance, and you still smiled, still denied it all, like a tap on the shoulder would fool me. You disgust me, and I won’t even explain why, because deep down, I still have some sympathy for what’s left of you, poor soul. But if you even try — which I doubt you'll do, because I know who you truly are (Fat Mizzo, Dunk, 1:21).
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                -... .. .-.. a parasite, a true weakling that feeds on the warmth of others, day one he arrived looking so pathetically scared it almost triggered pity, barely breathing, avoiding eye contact, no words, no presence, like a cold stone dropped in the middle of people — lifeless. But that’s what he wanted me to think, that’s the illusion, the performance. Because once he got a grip, once the slightest bond formed, he started sucking — not blood, but energy, time, focus, everything. I made him my friend, someone to trust (Shaw, Akhi, 0:26), but I felt it, I knew it — that the stone started to shift, little cracks showing, patterns slipping. Then I woke up. I opened my eyes and threw lines his way, stories crafted like bait, and just as I expected, he flinched, he gave in, that ugly pride surfaced. He used what I gave him to fill the hollow in him, and just like before, I was right. So I kept him close, not out of affection — but preparation. I studied him, read his lines, memorized every weakness until I knew that only I could turn his pathetic flame to dust. Eventually, of course, he drifted, he thrived to the other side. (Fat Mizzo, Dunk, 0:14). Because a parasite always returns to its pack. And as for that pack — a group of dogs that bite doesn’t scare me, because I don’t throw bones, I break jaws. And I won’t give a single one of them mercy(Najm, Ain't no Mercy, 0:58).
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                You know the type. The one who can’t earn a damn thing without crawling, begging, pleading. A leech in disguise, always needing help but pretending he’s got it all figured out. The moment he gets what he came for, he snaps back to that fake pride — like he wasn’t just scraping the floor for scraps a second ago. He’s the addict. Not to drugs(or maybe ?), no — to attention, to dependence, to being carried through life like a broken puppet that still thinks it’s the puppeteer. Drugs? you don't want Her to know? do you -- ..- ... — for the ones paying attention.
+                This guy? The one you're thinking about? Yeah, the little "please help me, please notice me, please guide me" echo. A walking contradiction, lying to himself every step of the way. "I don’t need anyone," he says — as he stretches out his hand for the hundredth time. He’s not unique. He’s a copy of a copy. Pathetic, predictable, and loud.
+                But shall we go deeper?
+                Because this rabbit hole isn’t shallow. It’s carved with bare hands and years of watching people rot from the inside. And I? I’m the only one who knows how to dig deep enough to reach what they’re really hiding. Not to scare you — but to change you. And trust me when I say, I can go as far as you want. I promise: you’ll break long before my shovel ever does.
+                Don’t confuse my silence for softness. I didn’t hold back because I couldn’t strike — I held back because I chose not to. Not for me, but for you. You, who are truly the most blind among them. So why don’t you behave?
+                No, I don’t think you will.
+                So let me paint it more clearly for your uneducated mind — because metaphors clearly don’t work on the deaf. (Fat Mizzo, Kurt, 2:02). And PEOPLE, REMEMBER — I am not here for fun. This isn’t a game to me. This is the line, and I draw it with a blade.
+            </p>
+
+            <hr style="border-color: #444; margin: 30px 0;" />
+
+            <p>
+                .. ... ... (Najm, Rosy, 1:33)
+            </p>
+            <div style="text-align: center;">
+                <button class="button" onclick="showPage('page1')">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('div[id^="page"]').forEach(div => div.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
